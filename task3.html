@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Style for navigation menu */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background-color: #222;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        /* Dummy content */
+        .content {
+            padding: 120px 20px;
+        }
+
+        section {
+            padding: 100px 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        p {
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">Logo</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="content">
+        <section id="home">
+            <h1>Home</h1>
+            <p>Welcome to our website! Scroll down to see the menu's interactive features.</p>
+        </section>
+        <section id="about">
+            <h1>About</h1>
+            <p>We provide the best solutions to meet your needs. Hover over the navigation menu items to see the style change.</p>
+        </section>
+        <section id="services">
+            <h1>Services</h1>
+            <p>Explore our wide range of services designed to make your life easier.</p>
+        </section>
+        <section id="contact">
+            <h1>Contact</h1>
+            <p>Get in touch with us for more information!</p>
+        </section>
+    </div>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+
+        // Add event listener for scroll
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
